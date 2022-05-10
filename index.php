@@ -28,7 +28,8 @@ class Movie {
 
   //funzione
   public function setGuadagno( $budget, $boxoffice ){
-    $guadagno = $boxoffice - $budget;
+    if($boxoffice > $budget) {
+        $this->sconto = 10;
   }
 
   //Funzione di stampa
@@ -38,7 +39,7 @@ class Movie {
 }
 
 //istanziamento
-$Tenenbaum = new Movie("Tenenbaum", "Wes Anderson", 2001 , 21000000 , 72000000 );
+$Tenenbaum = new Movie("The Royal Tenenbaums", "Wes Anderson", 2001 , 21000000 , 72000000 );
 
 echo "<p>". $Tenenbaum -> title ."</p>";
 echo "<p>". $Tenenbaum -> director ."</p>";
