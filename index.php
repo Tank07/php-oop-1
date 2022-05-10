@@ -28,7 +28,7 @@ class Movie {
 
   //funzione
   public function setGuadagno( $budget, $boxoffice ){
-    $guadagno = $budget - $boxoffice;
+    $guadagno = $boxoffice - $budget;
   }
 
   //Funzione di stampa
