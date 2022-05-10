@@ -15,6 +15,7 @@ class Movie {
   public $releasedate;
   public $budget;
   public $boxoffice; 
+  public $guadagno;
 
   //Costruttore
   public function __construct($_title, $_director, $_releasedate, $_budget, $_boxoffice){
@@ -27,10 +28,7 @@ class Movie {
 
   //funzione
   public function setGuadagno( $budget, $boxoffice ){
-    if($budget < $boxoffice ) {
-      $this-> guadagno = 10;
-    }
-    return $this -> guadagno;
+    $guadagno = $budget - $boxoffice;
   }
 
   //Funzione di stampa
