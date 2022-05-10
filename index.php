@@ -27,9 +27,10 @@ class Movie {
   }
 
   //funzione
-  public function setGuadagno( $budget, $boxoffice ){
-    if($boxoffice > $budget) {
-        $this->sconto = 10;
+  public function setGuadagno(){
+    if($this -> boxoffice > $this -> budget) {
+        $this->guadagno = true;
+    }
   }
 
   //Funzione di stampa
@@ -49,9 +50,11 @@ echo "<p>". $Tenenbaum -> boxoffice ."</p>";
 
 //Stampa funzioni
 
+echo "<p>" . $Tenenbaum -> setGuadagno() . "</p>";
+
 echo "<p>" . $Tenenbaum -> guadagno . "</p>";
 
-echo "<p>" . $Tenenbaum -> getGuadagno() . "</p>";
+var_dump($Tenenbaum -> getGuadagno()) ;
 
 
 ?>
