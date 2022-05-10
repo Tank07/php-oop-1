@@ -29,7 +29,7 @@ class Movie {
   //funzione
   public function setGuadagno(){
     if($this -> boxoffice > $this -> budget) {
-        $this->guadagno = true;
+        $this->guadagno = "true";
     }
   }
 
@@ -52,9 +52,12 @@ echo "<p>". $Tenenbaum -> boxoffice ."</p>";
 
 echo "<p>" . $Tenenbaum -> setGuadagno() . "</p>";
 
-echo "<p>" . $Tenenbaum -> guadagno . "</p>";
+// Non si stampa in public
+// echo "<p>" . $Tenenbaum -> guadagno . "</p>";
 
-var_dump($Tenenbaum -> getGuadagno()) ;
+// Risolto conversione Booleano
+// var_dump($Tenenbaum -> getGuadagno()) ;
 
+echo "<p>" . $Tenenbaum -> getGuadagno() . "</p>";
 
 ?>
