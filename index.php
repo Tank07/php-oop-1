@@ -16,6 +16,7 @@ class Movie {
   public $budget;
   public $boxoffice; 
   public $guadagno;
+  public $gains;
 
   //Costruttore
   public function __construct($_title, $_director, $_releasedate, $_budget, $_boxoffice){
@@ -26,27 +27,39 @@ class Movie {
     $this -> boxoffice = $_boxoffice;
   }
 
-  //funzione
+  //Funzione
   public function setGuadagno(){
     if($this -> boxoffice > $this -> budget) {
         $this->guadagno = "true";
     }
+    else{
+      $this->guadagno = "false";
+    }
   }
 
   //Funzione di stampa
-  public function getGuadagno( ){
+  public function getGuadagno(){
     return $this -> guadagno;
   }
+
+  public function setGain( $boxoffice, $budget ){
+    $gains = $boxoffice - $budget;
+    }
+
+  public function getGain(){
+    return $this -> gains;
+  }
+
 }
 
-//istanziamento
+//Istanziamento
 $Tenenbaum = new Movie("The Royal Tenenbaums", "Wes Anderson", 2001 , 21000000 , 72000000 );
 
-echo "<p>". $Tenenbaum -> title ."</p>";
-echo "<p>". $Tenenbaum -> director ."</p>";
-echo "<p>". $Tenenbaum -> releasedate ."</p>";
-echo "<p>". $Tenenbaum -> budget ."</p>";
-echo "<p>". $Tenenbaum -> boxoffice ."</p>";
+echo "<p> Film title: ". $Tenenbaum -> title ."</p>";
+echo "<p> Director: ". $Tenenbaum -> director ."</p>";
+echo "<p> Release date: ". $Tenenbaum -> releasedate ."</p>";
+echo "<p> Budget: ". $Tenenbaum -> budget ."€</p>";
+echo "<p> Box Office: ". $Tenenbaum -> boxoffice ."</p>";
 
 //Stampa funzioni
 
@@ -56,8 +69,27 @@ echo "<p>" . $Tenenbaum -> setGuadagno() . "</p>";
 // echo "<p>" . $Tenenbaum -> guadagno . "</p>";
 
 // Risolto conversione Booleano
-// var_dump($Tenenbaum -> getGuadagno()) ;
+// var_dump($Tenenbaum -> getGuadagno());
 
-echo "<p>" . $Tenenbaum -> getGuadagno() . "</p>";
+echo "<p> It was a succes ? " . $Tenenbaum -> getGuadagno() . "</p>";
+
+
+echo "<p>" . $Tenenbaum -> setGain($Tenenbaum -> boxoffice, $Tenenbaum -> budget) . "</p>";
+
+echo "<p>" . $Tenenbaum -> getGain() . "</p>";
+
+//Funzioni secondo object
+
+$TreasurePlanet = new Movie("Treasure Planet", "John Musker", 2002 , 140000000 , 110000000 );
+
+echo "<p> Film Title: ". $TreasurePlanet -> title ."</p>";
+echo "<p> Director: ". $TreasurePlanet -> director ."</p>";
+echo "<p> Release date: ". $TreasurePlanet -> releasedate ."</p>";
+echo "<p> Budget: ". $TreasurePlanet -> budget ."€</p>";
+echo "<p> Box Office: ". $TreasurePlanet -> boxoffice ."€</p>";
+
+echo "<p>" . $TreasurePlanet -> setGuadagno() . "</p>";
+
+echo "<p> It was a succes ? " . $TreasurePlanet -> getGuadagno() . "</p>";
 
 ?>
