@@ -48,5 +48,11 @@ echo "<p>". $Tenenbaum -> releasedate ."</p>";
 echo "<p>". $Tenenbaum -> budget ."</p>";
 echo "<p>". $Tenenbaum -> boxoffice ."</p>";
 
+//Stampa funzioni
+
+echo "<p>" . $Tenenbaum -> guadagno . "</p>";
+
+echo "<p>" . $Tenenbaum -> getGuadagno() . "</p>";
+
 
 ?>
